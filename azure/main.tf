@@ -28,7 +28,7 @@ resource "azurerm_log_analytics_workspace" "log_workspace" {
   name                = "fiap-tech-challenge-observability"
   location            = azurerm_resource_group.observability_group.location
   resource_group_name = azurerm_resource_group.observability_group.name
-  sku                 = "Free"
+  sku                 = "PerGB2018"
 
   tags = {
     environment = azurerm_resource_group.observability_group.tags["environment"]
