@@ -6,7 +6,7 @@ terraform {
     }
   }
   backend "azurerm" {
-    key = "terraform.tfstate"
+    key = "terraform-observability.tfstate"
   }
 }
 
