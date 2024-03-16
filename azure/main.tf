@@ -36,7 +36,7 @@ resource "azurerm_storage_account" "log_storage_account" {
 }
 
 resource "azurerm_log_analytics_workspace" "log_workspace" {
-  name                = "fiap-tech-challenge-observability"
+  name                = "fiap-tech-challenge-observability-workspace"
   location            = azurerm_resource_group.observability_group.location
   resource_group_name = azurerm_resource_group.observability_group.name
   sku                 = "PerGB2018"
