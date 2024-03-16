@@ -24,7 +24,6 @@ resource "azurerm_resource_group" "observability_group" {
 }
 
 resource "azurerm_log_analytics_workspace" "log_workspace" {
-  # The WorkSpace name has to be unique across the whole of azure, not just the current subscription/tenant.
   name                = "fiap-tech-challenge-observability"
   location            = azurerm_resource_group.observability_group.location
   resource_group_name = azurerm_resource_group.observability_group.name
@@ -44,7 +43,7 @@ resource "azurerm_log_analytics_solution" "log_solution_container_insights" {
 
   plan {
     publisher = "Microsoft"
-    product   = "OMSGallery/ContainerInsights"
+    product   = "ContainerInsights"
   }
 
   tags = {
