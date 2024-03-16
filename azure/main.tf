@@ -66,7 +66,7 @@ resource "azurerm_log_analytics_solution" "log_solution_container_insights" {
 data "azurerm_subscription" "current" {}
 
 resource "azurerm_monitor_diagnostic_setting" "subscription_monitor" {
-  name                       = "fiap-tech-challenge-monitor"
+  name                       = "fiap-tech-challenge-subscription-monitor"
   target_resource_id         = data.azurerm_subscription.current.id
   storage_account_id         = azurerm_storage_account.log_storage_account.id
   log_analytics_workspace_id = azurerm_log_analytics_workspace.log_workspace.id
