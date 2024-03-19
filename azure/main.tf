@@ -111,3 +111,11 @@ resource "azurerm_monitor_diagnostic_setting" "subscription_monitor" {
     category = "AllMetrics"
   }
 }
+
+resource "azurerm_application_insights" "observability_application_insights" {
+  name                = "fiap-tech-challenge-application-insights"
+  location            = azurerm_resource_group.observability_group.location
+  resource_group_name = azurerm_resource_group.observability_group.name
+  workspace_id        = azurerm_log_analytics_workspace.log_workspace.id
+  application_type    = "web"
+}
