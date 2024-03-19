@@ -2,7 +2,7 @@ name: 'Terraform Destroy'
 
 on:
   schedule:
-    - cron: '0-6 4 * * *'
+    - cron: '0-6 5 * * *'
   workflow_dispatch:
   
 env:
@@ -14,7 +14,7 @@ env:
   RESOURCE_GROUP: ${{ secrets.AZURE_TF_STATE_RESOURCE_GROUP }}
   STORAGE_ACCOUNT: ${{ secrets.AZURE_TF_STATE_STORAGE_ACCOUNT }}
   CONTAINER_NAME: ${{ secrets.AZURE_TF_STATE_CONTAINER_NAME }}
-
+ 
 jobs:
   azure_terraform:
     name: 'Azure - Terraform deploy'
